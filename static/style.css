@@ -27,3 +27,6 @@ textarea {
 .incorrect {
     color: red;
 }
+.container {
+    max-width: 1000px; /* Adjust the value as needed */
+}

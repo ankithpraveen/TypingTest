@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let correctWords = 0;
     let totalWords = 0;
     let originalWords = [];
+    let timerElement = document.getElementById('timer');
+    let countdownInterval;
 
     // Fetch and display the initial paragraph
     getRandomParagraphs();
@@ -54,9 +56,24 @@ document.addEventListener('DOMContentLoaded', function () {
         testDuration = parseInt(durationSelect.value, 10);
         startTime = new Date();
         endTime = new Date(startTime.getTime() + testDuration * 1000);
+        // Display initial timer value
+        updateTimerDisplay();
+
+        // Start the countdown interval
+        countdownInterval = setInterval(updateTimerDisplay, 1000);
         setTimeout(() => endTypingTest(), testDuration * 1000);
     }
 
+    function updateTimerDisplay() {
+        const currentTime = new Date();
+        const remainingTimeInSeconds = Math.max(0, Math.round((endTime - currentTime) / 1000));
+        timerElement.textContent = `${remainingTimeInSeconds}s`;
+    
+        if (remainingTimeInSeconds === 0) {
+            clearInterval(countdownInterval);
+        }
+    }
+    
     // Check real-time accuracy
     function updateParagraphColor() {
         const userInputText = userInputElement.value.trim();
