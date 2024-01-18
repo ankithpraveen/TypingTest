@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1>Typing Test</h1>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="quote">Paragraph:</label>
+                    <button id="refreshButton" class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i></button>
+                    <div id="quote" class="border p-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="userInput">Your typing:</label>
+                    <textarea id="userInput" class="form-control" rows="3" placeholder="Start typing..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="durationSelect">Select test duration (seconds):</label>
+                    <select id="durationSelect" class="form-control">
+                        <option value="10">10</option>
+                        <option value="30">30</option>
+                        <option value="60">60</option>
+                        <option value="120">120</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="includeSpecial">
+                    <label class="form-check-label" for="includeSpecial">Include special characters</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="includeNumbers">
+                    <label class="form-check-label" for="includeNumbers">Include numbers</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="includeCapital">
+                    <label class="form-check-label" for="includeCapital">Include capital letters</label>
+                </div>
+                <!-- <button id="startButton" class="btn btn-primary">Start Typing Test</button> -->
+                <p id="result" class="mt-3"></p>
+                <div id="stats"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
