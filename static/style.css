@@ -30,3 +30,24 @@ textarea {
 .container {
     max-width: 1000px; /* Adjust the value as needed */
 }
+/* Add these styles to your existing CSS file or in the head of your HTML */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Add this to style.css */
+.btn-light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-dark-mode {
+    background-color: #333;
+    color: #fff;
+}

@@ -141,4 +141,14 @@ document.addEventListener('DOMContentLoaded', function () {
         getRandomParagraphs();
         startTypingTest();
     });
+
+    const toggleModeButton = document.getElementById('toggleModeButton');
+    toggleModeButton.addEventListener('click', toggleMode);
+
+    function toggleMode() {
+        document.body.classList.toggle('light-mode');
+        document.body.classList.toggle('dark-mode');
+        toggleModeButton.classList.toggle('btn-light-mode');
+        toggleModeButton.classList.toggle('btn-dark-mode');
+    }
 });
